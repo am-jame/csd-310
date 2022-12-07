@@ -9,10 +9,10 @@ from mysql.connector import errorcode
 
 
 config = {
-    "user": "OADB_user",
-    "password": "popcorn",
+    "user": "root",
+    "password": "Asdvb678kl####",
     "host": "127.0.0.1",
-    "database": "OutlandAdv",
+    "database": "outland",
     "raise_on_warnings": False
 }
 
@@ -21,8 +21,6 @@ try:
     db = mysql.connector.connect(**config)
 
     print("\n Database user {} connected to MySQL on host {} with database {}".format(config["user"],config["host"],config["database"]))
-
-    input("\n\n Press enter to continue...")
 
 except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
@@ -38,7 +36,7 @@ cursor = db.cursor()
 
 # Display tables
 # Inventory
-cursor.execute("""SELECT * FROM inventory""") 
+cursor.execute("""SELECT * FROM inventory""")
 inventory = cursor.fetchall()
 for item in inventory:
     print(item)
