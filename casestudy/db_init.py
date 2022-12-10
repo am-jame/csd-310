@@ -54,6 +54,7 @@ try:
         manufacturer_name       VARCHAR(50)     NOT NULL,
         inventoryID             INT             NOT NULL,
         rental_cost             DEC(5,2),
+        inventory_date          DATE,
 
         PRIMARY KEY(productID),
 
@@ -160,13 +161,13 @@ try:
 
     # Products
     print(2)
-    cursor.execute("""INSERT INTO products (product_name, unit_cost, manufacturer_name, inventoryID, rental_cost)                          
-        VALUES ("Small Tent", 24.99, "Coleman", 1,19),
-        ("Medium Tent",49.99,"Coleman",2,37),
-        ("Large Tent",74.99,"Hilleberg",3,56),
-        ("Day Pack",49.99,"Port Authority",4,37),
-        ("Backpack",99.99,"Topo Designs",5,75),
-        ("Camping Pot",19.99,"GSI Outdoors",6,15)
+    cursor.execute("""INSERT INTO products (product_name, unit_cost, manufacturer_name, inventoryID, rental_cost, inventory_date)                          
+        VALUES ("Small Tent", 24.99, "Coleman", 1,19, "2021-10-04"),
+        ("Medium Tent",49.99,"Coleman",2,37, "2017-04-20"),
+        ("Large Tent",74.99,"Hilleberg",3,56, "2020-05-13"),
+        ("Day Pack",49.99,"Port Authority",4,37, "2020-05-13"),
+        ("Backpack",99.99,"Topo Designs",5,75, "2016-07-11"),
+        ("Camping Pot",19.99,"GSI Outdoors",6,15, "2021-10-04")
     """)
     db.commit()
 

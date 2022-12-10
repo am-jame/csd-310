@@ -48,7 +48,7 @@ cursor.execute("""SELECT * FROM products""")
 products = cursor.fetchall()
 print("\n -- PRODUCTS --")
 for item in products:
-    print(f'{item[0]}\tName: {item[1]}\tCost: ${item[2]}\tManufacturer: {item[3]}\tRental Cost: ${item[5]}')
+    print(f'{item[0]}\tName: {item[1]}\tCost: ${item[2]}\tManufacturer: {item[3]}\tRental Cost: ${item[5]}\tInventory Date: {item[6]}')
 
 # Locations
 cursor.execute("""SELECT * FROM locations""")
